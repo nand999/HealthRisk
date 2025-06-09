@@ -27,67 +27,71 @@
                 <form id="hypertension-form" class="prediction-form">
                     <div class="form-group">
                         <label for="age">Age (Years):</label>
-                        <input type="number" id="age" name="age" min="0" max="120" step="1" required>
+                        <input type="number" id="age" name="age" min="0" max="120" step="1" required title="Enter your current age in years.">
                     </div>
                     <div class="form-group">
                         <label for="sex">Sex:</label>
-                        <select id="sex" name="sex" required>
+                        <select id="sex" name="sex" required title="Select your biological sex.">
                             <option value="1">Male</option>
                             <option value="0">Female</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="cp">Chest Pain Type (0-3):</label>
-                        <input type="number" id="cp" name="cp" min="0" max="3" step="1" required>
+                        <input type="number" id="cp" name="cp" min="0" max="3" step="1" required title="Type of chest pain experienced (0: Typical angina, 1: Atypical angina, 2: Non-anginal pain, 3: Asymptomatic).">
                     </div>
                     <div class="form-group">
                         <label for="trestbps">Resting Blood Pressure (mm Hg):</label>
-                        <input type="number" id="trestbps" name="trestbps" min="80" max="200" step="1" required>
+                        <input type="number" id="trestbps" name="trestbps" min="80" max="200" step="1" required title="Your resting blood pressure in mm Hg upon admission to the hospital.">
                     </div>
                     <div class="form-group">
                         <label for="chol">Serum Cholestoral (mg/dl):</label>
-                        <input type="number" id="chol" name="chol" min="100" max="600" step="1" required>
+                        <input type="number" id="chol" name="chol" min="100" max="600" step="1" required title="Your serum cholesterol level in mg/dl.">
                     </div>
                     <div class="form-group">
                         <label for="fbs">Fasting Blood Sugar > 120 mg/dl:</label>
-                        <select id="fbs" name="fbs" required>
+                        <select id="fbs" name="fbs" required title="Is your fasting blood sugar greater than 120 mg/dl?">
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="restecg">Resting Electrocardiographic Results (0-2):</label>
-                        <input type="number" id="restecg" name="restecg" min="0" max="2" step="1" required>
+                        <input type="number" id="restecg" name="restecg" min="0" max="2" step="1" required title="Resting electrocardiographic results (0: Normal, 1: Having ST-T wave abnormality, 2: Showing probable or definite left ventricular hypertrophy by Estes' criteria).">
                     </div>
                     <div class="form-group">
                         <label for="thalach">Maximum Heart Rate Achieved:</label>
-                        <input type="number" id="thalach" name="thalach" min="60" max="220" step="1" required>
+                        <input type="number" id="thalach" name="thalach" min="60" max="220" step="1" required title="The maximum heart rate you achieved during a stress test.">
                     </div>
                     <div class="form-group">
                         <label for="exang">Exercise Induced Angina:</label>
-                        <select id="exang" name="exang" required>
+                        <select id="exang" name="exang" required title="Did you experience angina (chest pain) induced by exercise?">
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="oldpeak">ST depression induced by exercise relative to rest:</label>
-                        <input type="number" id="oldpeak" name="oldpeak" min="0" max="6" step="0.1" required>
+                        <input type="number" id="oldpeak" name="oldpeak" min="0" max="6" step="0.1" required title="ST depression induced by exercise relative to rest (e.g., 1.0 means a 1.0 mm depression).">
                     </div>
                     <div class="form-group">
                         <label for="slope">Slope of the peak exercise ST segment (0-2):</label>
-                        <input type="number" id="slope" name="slope" min="0" max="2" step="1" required>
+                        <input type="number" id="slope" name="slope" min="0" max="2" step="1" required title="The slope of the peak exercise ST segment (0: Upsloping, 1: Flat, 2: Downsloping).">
                     </div>
                     <div class="form-group">
                         <label for="ca">Number of major vessels (0-3) colored by flourosopy:</label>
-                        <input type="number" id="ca" name="ca" min="0" max="3" step="1" required>
+                        <input type="number" id="ca" name="ca" min="0" max="3" step="1" required title="Number of major vessels (0-3) colored by fluoroscopy.">
                     </div>
                     <div class="form-group">
-                        <label for="thal">Thal (3 = normal; 6 = fixed defect; 7 = reversable defect):</label>
-                        <input type="number" id="thal" name="thal" min="0" max="3" step="1" required>
+                        <label for="thal">Thal (0 = error, 1 = fixed defect, 2 = normal, 3 = reversable defect):</label>
+                        <input type="number" id="thal" name="thal" min="0" max="3" step="1" required title="Thallium stress test result (0=error/not specified, 1=fixed defect, 2=normal flow, 3=reversible defect). Note: Original dataset might use 3,6,7. This model expects 0,1,2,3.">
                     </div>
-                    <button type="submit">Predict Hypertension Risk</button>
+                    <div class="form-buttons">
+                        <button type="submit">Predict Hypertension Risk</button>
+                        <button type="button" id="clear-hypertension-form">Clear Form</button>
+                    </div>
                 </form>
+                <div id="loading-spinner" style="display: none;"><div class="spinner"></div></div>
                 <div id="hypertension-prediction-result"></div>
             </section>
         </div>

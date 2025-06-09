@@ -27,110 +27,114 @@
                 <form id="diabetes-form" class="prediction-form">
                     <div class="form-group">
                         <label for="Age">Age (Years):</label>
-                        <input type="number" id="Age" name="Age" min="0" max="120" step="1" required>
+                        <input type="number" id="Age" name="Age" min="0" max="120" step="1" required title="Enter your current age in years.">
                     </div>
                     <div class="form-group">
                         <label for="Sex">Sex:</label>
-                        <select id="Sex" name="Sex" required>
+                        <select id="Sex" name="Sex" required title="Select your biological sex.">
                             <option value="1">Male</option>
                             <option value="0">Female</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="HighChol">High Cholesterol:</label>
-                        <select id="HighChol" name="HighChol" required>
+                        <select id="HighChol" name="HighChol" required title="Do you have high cholesterol?">
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="CholCheck">Cholesterol Check in past 5 years:</label>
-                        <select id="CholCheck" name="CholCheck" required>
+                        <select id="CholCheck" name="CholCheck" required title="Have you had a cholesterol check in the last 5 years?">
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="BMI">BMI:</label>
-                        <input type="number" id="BMI" name="BMI" min="10" max="100" step="0.1" required>
+                        <input type="number" id="BMI" name="BMI" min="10" max="100" step="0.1" required title="Enter your Body Mass Index.">
                     </div>
                     <div class="form-group">
                         <label for="Smoker">Smoker:</label>
-                        <select id="Smoker" name="Smoker" required>
+                        <select id="Smoker" name="Smoker" required title="Have you smoked at least 100 cigarettes in your entire life?">
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="HeartDiseaseorAttack">Heart Disease or Attack:</label>
-                        <select id="HeartDiseaseorAttack" name="HeartDiseaseorAttack" required>
+                        <select id="HeartDiseaseorAttack" name="HeartDiseaseorAttack" required title="Have you ever been diagnosed with heart disease or had a heart attack?">
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="PhysActivity">Physical Activity in past 30 days:</label>
-                        <select id="PhysActivity" name="PhysActivity" required>
+                        <select id="PhysActivity" name="PhysActivity" required title="Have you engaged in physical activity or exercise during the past 30 days other than your regular job?">
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="Fruits">Consume Fruits daily:</label>
-                        <select id="Fruits" name="Fruits" required>
+                        <select id="Fruits" name="Fruits" required title="Do you consume fruit 1 or more times per day?">
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="Veggies">Consume Vegetables daily:</label>
-                        <select id="Veggies" name="Veggies" required>
+                        <select id="Veggies" name="Veggies" required title="Do you consume vegetables 1 or more times per day?">
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="HvyAlcoholConsump">Heavy Alcohol Consumption (adult men >14 drinks/week, adult women >7 drinks/week):</label>
-                        <select id="HvyAlcoholConsump" name="HvyAlcoholConsump" required>
+                        <select id="HvyAlcoholConsump" name="HvyAlcoholConsump" required title="Are you a heavy drinker (adult men having more than 14 drinks per week and adult women having more than 7 drinks per week)?">
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="GenHlth">General Health Scale (1-5, 1=Excellent, 5=Poor):</label>
-                        <input type="number" id="GenHlth" name="GenHlth" min="1" max="5" step="1" required>
+                        <input type="number" id="GenHlth" name="GenHlth" min="1" max="5" step="1" required title="Would you say that in general your health is: 1-Excellent, 2-Very Good, 3-Good, 4-Fair, 5-Poor.">
                     </div>
                     <div class="form-group">
                         <label for="MentHlth">Mental Health Days (Number of days mental health not good in past 30 days):</label>
-                        <input type="number" id="MentHlth" name="MentHlth" min="0" max="30" step="1" required>
+                        <input type="number" id="MentHlth" name="MentHlth" min="0" max="30" step="1" required title="Now thinking about your mental health, which includes stress, depression, and problems with emotions, for how many days during the past 30 days was your mental health not good?">
                     </div>
                     <div class="form-group">
                         <label for="PhysHlth">Physical Health Days (Number of days physical health not good in past 30 days):</label>
-                        <input type="number" id="PhysHlth" name="PhysHlth" min="0" max="30" step="1" required>
+                        <input type="number" id="PhysHlth" name="PhysHlth" min="0" max="30" step="1" required title="Now thinking about your physical health, which includes physical illness and injury, for how many days during the past 30 days was your physical health not good?">
                     </div>
                     <div class="form-group">
                         <label for="DiffWalk">Difficulty Walking:</label>
-                        <select id="DiffWalk" name="DiffWalk" required>
+                        <select id="DiffWalk" name="DiffWalk" required title="Do you have serious difficulty walking or climbing stairs?">
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="Stroke">Ever had a Stroke:</label>
-                        <select id="Stroke" name="Stroke" required>
+                        <select id="Stroke" name="Stroke" required title="(Ever told) you had a stroke.">
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="HighBP">High Blood Pressure:</label>
-                        <select id="HighBP" name="HighBP" required>
+                        <select id="HighBP" name="HighBP" required title="Have you ever been told by a doctor, nurse or other health professional that you have high blood pressure?">
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
                     </div>
-                    <button type="submit">Predict Diabetes Risk</button>
+                    <div class="form-buttons">
+                        <button type="submit">Predict Diabetes Risk</button>
+                        <button type="button" id="clear-diabetes-form">Clear Form</button>
+                    </div>
                 </form>
+                <div id="loading-spinner" style="display: none;"><div class="spinner"></div></div>
                 <div id="diabetes-prediction-result"></div>
             </section>
         </div>

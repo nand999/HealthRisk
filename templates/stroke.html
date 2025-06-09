@@ -27,39 +27,39 @@
                 <form id="stroke-form" class="prediction-form">
                     <div class="form-group">
                         <label for="sex">Gender:</label>
-                        <select id="sex" name="sex" required>
+                        <select id="sex" name="sex" required title="Select your gender.">
                             <option value="1">Male</option>
                             <option value="0">Female</option>
                             </select>
                     </div>
                     <div class="form-group">
                         <label for="age">Age (Years):</label>
-                        <input type="number" id="age" name="age" min="0" max="120" step="1" required>
+                        <input type="number" id="age" name="age" min="0" max="120" step="1" required title="Enter your current age in years.">
                     </div>
                     <div class="form-group">
                         <label for="hypertension">Hypertension:</label>
-                        <select id="hypertension" name="hypertension" required>
+                        <select id="hypertension" name="hypertension" required title="Do you have hypertension (high blood pressure)?">
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="heart_disease">Heart Disease:</label>
-                        <select id="heart_disease" name="heart_disease" required>
+                        <select id="heart_disease" name="heart_disease" required title="Do you have any heart disease?">
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="ever_married">Ever Married:</label>
-                        <select id="ever_married" name="ever_married" required>
+                        <select id="ever_married" name="ever_married" required title="Have you ever been married?">
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="work_type">Work Type:</label>
-                        <select id="work_type" name="work_type" required>
+                        <select id="work_type" name="work_type" required title="What is your current work type? (Children, Never Worked, Govt_job, Self-employed, Private)">
                             <option value="0">Children</option>
                             <option value="1">Never Worked</option>
                             <option value="2">Govt_job</option>
@@ -69,30 +69,34 @@
                     </div>
                     <div class="form-group">
                         <label for="Residence_type">Residence Type:</label>
-                        <select id="Residence_type" name="Residence_type" required>
+                        <select id="Residence_type" name="Residence_type" required title="What is your residence type? (Urban or Rural)">
                             <option value="1">Urban</option>
                             <option value="0">Rural</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="avg_glucose_level">Average Glucose Level:</label>
-                        <input type="number" id="avg_glucose_level" name="avg_glucose_level" min="50" max="300" step="0.1" required>
+                        <input type="number" id="avg_glucose_level" name="avg_glucose_level" min="50" max="300" step="0.1" required title="Your average glucose level in blood (mg/dL).">
                     </div>
                     <div class="form-group">
                         <label for="bmi">BMI:</label>
-                        <input type="number" id="bmi" name="bmi" min="10" max="100" step="0.1" required>
+                        <input type="number" id="bmi" name="bmi" min="10" max="100" step="0.1" required title="Your Body Mass Index.">
                     </div>
                     <div class="form-group">
                         <label for="smoking_status">Smoking Status:</label>
-                        <select id="smoking_status" name="smoking_status" required>
+                        <select id="smoking_status" name="smoking_status" required title="What is your smoking status? (Unknown, Formerly Smoked, Never Smoked, Smokes)">
                             <option value="0">Unknown</option>
                             <option value="1">Formerly Smoked</option>
                             <option value="2">Never Smoked</option>
                             <option value="3">Smokes</option>
                         </select>
                     </div>
-                    <button type="submit">Predict Stroke Risk</button>
+                    <div class="form-buttons">
+                        <button type="submit">Predict Stroke Risk</button>
+                        <button type="button" id="clear-stroke-form">Clear Form</button>
+                    </div>
                 </form>
+                <div id="loading-spinner" style="display: none;"><div class="spinner"></div></div>
                 <div id="stroke-prediction-result"></div>
             </section>
         </div>

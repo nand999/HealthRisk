@@ -127,6 +127,26 @@ main {
     width: 100%;
 }
 
+.prediction-form button[type="button"] {
+    background-color: #6c757d; /* A different color for clear button */
+    margin-top: 10px; /* Add some space if buttons stack */
+}
+
+.prediction-form button[type="button"]:hover {
+    background-color: #5a6268;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+.prediction-form .form-buttons button {
+    width: auto; /* Allow buttons to size based on content */
+    flex-grow: 1; /* Make buttons share space if needed */
+}
+
 .prediction-form button:hover {
     background-color: #1976D2; /* Darker blue */
 }
@@ -248,6 +268,32 @@ main {
 }
 
 
+/* Loading Spinner Styles */
+#loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: var(--secondary-color);
+    animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /* Footer */
 footer {
     background-color: var(--primary-color);
@@ -283,6 +329,19 @@ footer {
 
     .prediction-form {
         padding: 20px;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+
+    .prediction-form .form-buttons button {
+        width: 100%; /* Stack buttons vertically on small screens */
+        margin-bottom: 10px;
+    }
+
+    .prediction-form .form-buttons button:last-child {
+        margin-bottom: 0;
     }
 }
 
