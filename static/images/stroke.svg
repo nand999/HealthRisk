@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="strokeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffc107;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d39e00;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="45" fill="url(#strokeGradient)"/>
+  <!-- Simple brain / head silhouette with a lightning bolt for impact -->
+  <path d="M35 65 Q25 50 35 35 Q50 20 65 35 Q75 50 65 65 C 60 75 40 75 35 65 Z" fill="#FFFFFF"/>
+  <path d="M45 40 L50 55 L55 45 L60 60 L55 50 L50 35 L45 45 L40 30 Z" fill="#007bff" stroke="#0056b3" stroke-width="2"/>
+  <text x="50" y="90" font-family="Arial, sans-serif" font-size="12" fill="#333333" text-anchor="middle">Stroke</text>
+</svg>

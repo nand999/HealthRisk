@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthRisk - Diabetes Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">HealthRisk</a>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/menu">Predictions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="card">
+                <h2>Diabetes Risk Prediction</h2>
+                <form id="diabetes-form" class="prediction-form">
+                    <div class="form-group">
+                        <label for="Age">Age (Years):</label>
+                        <input type="number" id="Age" name="Age" min="0" max="120" step="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Sex">Sex:</label>
+                        <select id="Sex" name="Sex" required>
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="HighChol">High Cholesterol:</label>
+                        <select id="HighChol" name="HighChol" required>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="CholCheck">Cholesterol Check in past 5 years:</label>
+                        <select id="CholCheck" name="CholCheck" required>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="BMI">BMI:</label>
+                        <input type="number" id="BMI" name="BMI" min="10" max="100" step="0.1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Smoker">Smoker:</label>
+                        <select id="Smoker" name="Smoker" required>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="HeartDiseaseorAttack">Heart Disease or Attack:</label>
+                        <select id="HeartDiseaseorAttack" name="HeartDiseaseorAttack" required>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="PhysActivity">Physical Activity in past 30 days:</label>
+                        <select id="PhysActivity" name="PhysActivity" required>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Fruits">Consume Fruits daily:</label>
+                        <select id="Fruits" name="Fruits" required>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Veggies">Consume Vegetables daily:</label>
+                        <select id="Veggies" name="Veggies" required>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="HvyAlcoholConsump">Heavy Alcohol Consumption (adult men >14 drinks/week, adult women >7 drinks/week):</label>
+                        <select id="HvyAlcoholConsump" name="HvyAlcoholConsump" required>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="GenHlth">General Health Scale (1-5, 1=Excellent, 5=Poor):</label>
+                        <input type="number" id="GenHlth" name="GenHlth" min="1" max="5" step="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="MentHlth">Mental Health Days (Number of days mental health not good in past 30 days):</label>
+                        <input type="number" id="MentHlth" name="MentHlth" min="0" max="30" step="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="PhysHlth">Physical Health Days (Number of days physical health not good in past 30 days):</label>
+                        <input type="number" id="PhysHlth" name="PhysHlth" min="0" max="30" step="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="DiffWalk">Difficulty Walking:</label>
+                        <select id="DiffWalk" name="DiffWalk" required>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Stroke">Ever had a Stroke:</label>
+                        <select id="Stroke" name="Stroke" required>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="HighBP">High Blood Pressure:</label>
+                        <select id="HighBP" name="HighBP" required>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <button type="submit">Predict Diabetes Risk</button>
+                </form>
+                <div id="diabetes-prediction-result"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 HealthRisk. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

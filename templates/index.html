@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthRisk - Your Health Companion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">HealthRisk</a>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/menu">Predictions</a></li>
+                    <li><a href="#about">About</a></li>
+                    <!-- <li><a href="#contact">Contact</a></li> -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1>Assess Your Health Risks with HealthRisk</h1>
+                <p>Empowering you with personalized health risk predictions for Diabetes, Hypertension, and Stroke. Take control of your well-being today!</p>
+                <a href="/menu" class="btn-primary">Get Started Now</a>
+            </section>
+
+            <section class="card">
+                <h2>Our Features</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h3>Diabetes Prediction</h3>
+                        <p>Evaluate your risk of developing diabetes based on key health indicators.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Hypertension Prediction</h3>
+                        <p>Understand your likelihood of having hypertension using various cardiovascular metrics.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Stroke Prediction</h3>
+                        <p>Assess your stroke risk by analyzing relevant health and lifestyle factors.</p>
+                    </div>
+                    <!-- <div class="feature-item">
+                        <h3>Interactive Interface</h3>
+                        <p>A user-friendly and responsive design for a seamless experience on any device.</p>
+                    </div> -->
+                </div>
+            </section>
+
+            <section class="card" id="about">
+                <h2>About HealthRisk</h2>
+                <p>HealthRisk is an intelligent system designed to provide early risk assessments for common non-communicable diseases. By leveraging advanced machine learning models (TensorFlow), we aim to help individuals be more aware of their health status and encourage preventive measures. Our goal is to contribute to a healthier community by making health insights accessible and understandable.</p>
+            </section>
+
+            <!-- <section class="card" id="contact">
+                <h2>About Us Us</h2>
+                <p>This App is made with love from us to everyone</p>
+                <p></p>
+                <p>Phone: +62 123 456 789</p>
+            </section> -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 HealthRisk. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

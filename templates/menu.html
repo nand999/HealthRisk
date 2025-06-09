@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthRisk - Prediction Menu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">HealthRisk</a>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/menu">Predictions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="card">
+                <h2>Choose a Health Risk Prediction</h2>
+                <div class="menu-grid">
+                    <a href="/predict_diabetes" class="menu-item">
+                        <img src="{{ url_for('static', filename='images/diabetes.svg') }}" alt="Diabetes Icon">
+                        <h3>Diabetes</h3>
+                    </a>
+                    <a href="/predict_hypertension" class="menu-item">
+                        <img src="{{ url_for('static', filename='images/hypertension.svg') }}" alt="Hypertension Icon">
+                        <h3>Hypertension</h3>
+                    </a>
+                    <a href="/predict_stroke" class="menu-item">
+                        <img src="{{ url_for('static', filename='images/stroke.svg') }}" alt="Stroke Icon">
+                        <h3>Stroke</h3>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 HealthRisk. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
