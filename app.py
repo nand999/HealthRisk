@@ -7,8 +7,6 @@ import os
 
 app = Flask(__name__)
 
-# --- Load Models and Preprocessors ---
-# Ensure these paths are correct relative to app.py
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SAVED_MODELS_DIR = os.path.join(BASE_DIR, 'saved_models')
 
@@ -42,7 +40,6 @@ except Exception as e:
     stroke_model = None
     stroke_preprocessor = None
 
-# --- Routes ---
 
 @app.route('/')
 def landing_page():
@@ -60,7 +57,6 @@ def predict_diabetes():
 
         try:
             data = request.form.to_dict()
-            # Convert values to float as expected by the model
             input_data = {
                 'Age': float(data['Age']),
                 'Sex': float(data['Sex']),
@@ -77,13 +73,11 @@ def predict_diabetes():
                 'MentHlth': float(data['MentHlth']),
                 'PhysHlth': float(data['PhysHlth']),
                 'DiffWalk': float(data['DiffWalk']),
-                'Stroke': float(data['Stroke']), # Note: This is confusing if stroke is also a prediction target elsewhere.
-                                                 # Ensure consistency. Here, it's an input feature.
+                'Stroke': float(data['Stroke']),                  
                 'HighBP': float(data['HighBP'])
             }
 
-            # Create a DataFrame in the exact order of training columns
-            # Ensure the order matches the columns used during training
+
             feature_order = [
                 'Age', 'Sex', 'HighChol', 'CholCheck', 'BMI', 'Smoker',
                 'HeartDiseaseorAttack', 'PhysActivity', 'Fruits', 'Veggies',
@@ -91,14 +85,12 @@ def predict_diabetes():
                 'DiffWalk', 'Stroke', 'HighBP'
             ]
             
-            # Convert input_data to a DataFrame for scaling
+
             input_df = pd.DataFrame([input_data], columns=feature_order)
 
-            # Apply scaler to numerical columns
             numerical_cols_diabetes = ['Age', 'BMI', 'GenHlth', 'MentHlth', 'PhysHlth']
             input_df[numerical_cols_diabetes] = diabetes_scaler.transform(input_df[numerical_cols_diabetes])
 
-            # Make prediction
             prediction_proba = diabetes_model.predict(input_df.values)[0][0]
             prediction_class = (prediction_proba > 0.5).astype(int)
 
@@ -118,30 +110,27 @@ def predict_hypertension():
 
         try:
             data = request.form.to_dict()
-            # Convert to appropriate types
             input_data = {
                 'age': float(data['age']),
-                'sex': float(data['sex']), # Assuming 0 or 1
+                'sex': float(data['sex']), 
                 'cp': float(data['cp']),
                 'trestbps': float(data['trestbps']),
                 'chol': float(data['chol']),
-                'fbs': float(data['fbs']), # Assuming 0 or 1
+                'fbs': float(data['fbs']), 
                 'restecg': float(data['restecg']),
                 'thalach': float(data['thalach']),
-                'exang': float(data['exang']), # Assuming 0 or 1
+                'exang': float(data['exang']), 
                 'oldpeak': float(data['oldpeak']),
                 'slope': float(data['slope']),
                 'ca': float(data['ca']),
                 'thal': float(data['thal'])
             }
 
-            # Create a DataFrame for preprocessing (important for ColumnTransformer)
             input_df = pd.DataFrame([input_data])
 
-            # Apply the preprocessor
+            
             processed_input = hypertension_preprocessor.transform(input_df)
 
-            # Make prediction
             prediction_proba = hypertension_model.predict(processed_input)[0][0]
             prediction_class = (prediction_proba > 0.5).astype(int)
 
@@ -161,27 +150,23 @@ def predict_stroke():
 
         try:
             data = request.form.to_dict()
-            # Convert to appropriate types
             input_data = {
-                'sex': float(data['sex']), # Assuming 0 or 1
+                'sex': float(data['sex']), 
                 'age': float(data['age']),
-                'hypertension': float(data['hypertension']), # Assuming 0 or 1
-                'heart_disease': float(data['heart_disease']), # Assuming 0 or 1
-                'ever_married': float(data['ever_married']), # Assuming 0 or 1
+                'hypertension': float(data['hypertension']), 
+                'heart_disease': float(data['heart_disease']), 
+                'ever_married': float(data['ever_married']), 
                 'work_type': float(data['work_type']),
-                'Residence_type': float(data['Residence_type']), # Assuming 0 or 1
+                'Residence_type': float(data['Residence_type']), 
                 'avg_glucose_level': float(data['avg_glucose_level']),
                 'bmi': float(data['bmi']),
                 'smoking_status': float(data['smoking_status'])
             }
             
-            # Create a DataFrame for preprocessing (important for ColumnTransformer)
             input_df = pd.DataFrame([input_data])
 
-            # Apply the preprocessor
             processed_input = stroke_preprocessor.transform(input_df)
 
-            # Make prediction
             prediction_proba = stroke_model.predict(processed_input)[0][0]
             prediction_class = (prediction_proba > 0.5).astype(int)
 
@@ -194,4 +179,4 @@ def predict_stroke():
     return render_template('stroke.html')
 
 if __name__ == '__main__':
-    app.run(debug=True) # Set debug=False for production
+    app.run(debug=True)
