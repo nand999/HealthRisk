@@ -17,7 +17,7 @@ Aplikasi ini adalah sebuah sistem berbasis web yang bertujuan untuk membantu pen
 
 -   **Backend**: Python (Flask)
 -   **Frontend**: HTML, CSS, JavaScript
--   **Machine Learning**: Scikit-learn, TensorFlow/Keras (untuk model yang disimpan)
+-   **Machine Learning**: Scikit-learn, TensorFlow/Keras
 -   **Deployment (Lokal)**: Flask development server
 
 ## Struktur Proyek
@@ -56,10 +56,10 @@ Aplikasi ini adalah sebuah sistem berbasis web yang bertujuan untuk membantu pen
 
 ## Cara Instalasi
 
-1.  **Clone Repository (Jika ada di Git)**:
+1.  **Clone Repository**:
     ```bash
-    git clone <URL_REPOSITORY_INI>
-    cd <NAMA_DIREKTORI_PROYEK>
+    git clone https://github.com/nand999/HealthRisk.git
+    cd HealthRisk
     ```
 
 2.  **Buat dan Aktifkan Virtual Environment (Direkomendasikan)**:
@@ -113,10 +113,5 @@ Aplikasi ini adalah sebuah sistem berbasis web yang bertujuan untuk membantu pen
 7.  **Clear Form (Opsional)**:
     -   Jika ingin memasukkan data baru, klik tombol "Clear Form" untuk mengosongkan semua input.
 
-## Kontribusi
-
-Saat ini, kontribusi untuk proyek ini belum dibuka secara formal. Namun, jika Anda memiliki saran atau menemukan bug, silakan buat *issue* (jika proyek ini ada di platform Git seperti GitHub/GitLab).
-
-## Lisensi
-
-Proyek ini tidak memiliki lisensi spesifik saat ini. Harap gunakan dengan bijak dan sesuai dengan tujuan edukasi.
+##Sumber Dataset
+https://www.kaggle.com/datasets/prosperchuks/health-dataset
